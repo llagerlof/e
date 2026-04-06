@@ -1,8 +1,8 @@
-# v
+# e
 
 ## About
 
-`v` is a small Bash utility that opens the most recently modified text file in the current directory.
+`e` is a small Bash utility that opens the most recently modified text file in the current directory.
 
 It scans only the current folder, filters files by MIME type (`text/*`), sorts by newest first, and opens the selected file in `nvim` (or `vim` as fallback). If the file is not writable, it opens with `sudo`.
 
@@ -18,22 +18,22 @@ It scans only the current folder, filters files by MIME type (`text/*`), sorts b
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/llagerlof/v.git
-   cd v
+   git clone https://github.com/llagerlof/e.git
+   cd e
    ```
 2. Make the script executable (if needed):
    ```bash
-   chmod +x ./v
+   chmod +x ./e
    ```
 3. Optional: add it to your PATH:
    ```bash
-   sudo install -m 755 ./v /usr/local/bin/v
+   sudo install -m 755 ./e /usr/local/bin/e
    ```
 
 ## Usage
 
 ```bash
-v [-h] [number]
+e [-h] [number]
 ```
 
 - `-h`: include hidden files
@@ -43,17 +43,17 @@ v [-h] [number]
 
 Open the newest text file:
 ```bash
-v
+e
 ```
 
 Open the second newest text file:
 ```bash
-v 2
+e 2
 ```
 
 Include hidden files and open the newest match:
 ```bash
-v -h 1
+e -h 1
 ```
 
 ### Notes

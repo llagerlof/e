@@ -2,25 +2,25 @@
 
 ## Code Style
 
-- Treat `v` as a Bash script and keep changes compatible with common Linux Bash environments.
+- Treat `e` as a Bash script and keep changes compatible with common Linux Bash environments.
 - Keep CLI behavior stable: `-h` includes hidden files and positional `number` is 1-based.
 - Prefer small, explicit shell logic over complex abstractions.
 
 ## Architecture
 
-- The project is a single executable script: `v`.
-- `v` finds files in the current directory (`maxdepth=1`), sorts by modification time (newest first), filters to text files by MIME type, and opens the selected one in `nvim` or `vim`.
+- The project is a single executable script: `e`.
+- `e` finds files in the current directory (`maxdepth=1`), sorts by modification time (newest first), filters to text files by MIME type, and opens the selected one in `nvim` or `vim`.
 - If the selected file is not writable, the script escalates to `sudo`.
 
 ## Build And Test
 
 - No build step.
 - Syntax check before committing:
-  - `bash -n ./v`
+  - `bash -n ./e`
 - Manual validation commands (interactive):
-  - `./v`
-  - `./v 2`
-  - `./v -h 1`
+  - `./e`
+  - `./e 2`
+  - `./e -h 1`
 
 ## Conventions
 
