@@ -16,19 +16,25 @@ It scans only the current folder, filters files by MIME type (`text/*`), sorts b
 
 ### Install Steps
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/llagerlof/e.git
-   cd e
-   ```
-2. Make the script executable (if needed):
-   ```bash
-   chmod +x ./e
-   ```
-3. Optional: add it to your PATH:
-   ```bash
-   sudo install -m 755 ./e /usr/local/bin/e
-   ```
+Use this default setup:
+
+```bash
+mkdir -p ~/repos ~/.local/bin
+
+if [ -d ~/repos/e/.git ]; then
+   git -C ~/repos/e pull --ff-only
+else
+   git clone https://github.com/llagerlof/e.git ~/repos/e
+fi
+
+chmod +x ~/repos/e/e
+
+if [ ! -e ~/.local/bin/e ]; then
+   ln -s ~/repos/e/e ~/.local/bin/e
+fi
+```
+
+This keeps the project at `~/repos/e`, ensures `e` is executable, and creates `~/.local/bin/e` only when it does not already exist.
 
 ## Usage
 
