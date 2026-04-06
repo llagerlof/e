@@ -4,14 +4,14 @@
 
 `e` is a small Bash utility that opens the most recently modified text file in the current directory.
 
-It scans only the current folder, filters files by MIME type (`text/*`), sorts by newest first, and opens the selected file in `nvim` (or `vim` as fallback). If the file is not writable, it opens with `sudo`.
+It scans only the current folder, filters files by MIME type (`text/*`), sorts by newest first, and opens the selected file using the first available editor in this order: `nvim`, `vim`, `nano`, `vi`, `less`. If the file is not writable, it opens with `sudo`.
 
 ## Installation
 
 ### Prerequisites
 
 - Linux with Bash
-- One editor installed: `nvim` or `vim`
+- One editor installed: `nvim`, `vim`, `nano`, `vi`, or `less`
 - Common command-line tools: `find`, `file`, `sort`, `grep`, `sudo`
 
 ### Install Steps

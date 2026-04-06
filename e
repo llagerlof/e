@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# This script opens the most recently modified text file in the current directory using nvim or vim.
+# This script opens the most recently modified text file in the current directory using available fallback editors.
 #
 # Usage: ./script.sh [-h] [number]
 #   -h       Include hidden files
 #   number   The order of the file to open (1 = newest)
 #
-# Version: 0.1.0
+# Version: 0.2.0
 
 # Initialize variables
 include_hidden=false
@@ -87,13 +87,19 @@ fi
 # Select the file based on the provided number
 selected_file="${text_files[$((num - 1))]}"
 
-# Determine which editor to use (nvim or vim)
+# Determine which editor to use
 if command -v nvim >/dev/null 2>&1; then
     editor="nvim"
 elif command -v vim >/dev/null 2>&1; then
     editor="vim"
+elif command -v nano >/dev/null 2>&1; then
+    editor="nano"
+elif command -v vi >/dev/null 2>&1; then
+    editor="vi"
+elif command -v less >/dev/null 2>&1; then
+    editor="less"
 else
-    echo "Error: Neither nvim nor vim is installed."
+    echo "Error: None of the supported editors are installed (nvim, vim, nano, vi, less)."
     exit 1
 fi
 

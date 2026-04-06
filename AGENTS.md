@@ -27,3 +27,4 @@
 - Keep dependencies minimal and shell-native (`find`, `file`, `sort`, `grep`, `sudo`, `vim`/`nvim`).
 - Do not add recursive directory traversal unless explicitly requested.
 - Update `README.md` when flags, arguments, or editor-selection behavior changes.
+- When updating the script (new features, changing script behavior or fixing bugs) also update the script version using Semantic Versioning 2.0.0 specification.
