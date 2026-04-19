@@ -14,7 +14,7 @@ It scans only the current folder, filters files by MIME type (`text/*`), sorts b
 - One editor installed: `nvim`, `vim`, `nano`, `vi`, or `less`
 - Common command-line tools: `find`, `file`, `sort`, `grep`, `sudo`
 
-### Recommended: install only for the current user
+### Recommended: Install Only for the Current User
 
 This is the default setup for this project. It keeps the repository in `~/repos/e`, makes the script executable, and creates `~/.local/bin/e` only when it does not already exist:
 
@@ -36,7 +36,7 @@ fi
 
 If `~/.local/bin` is not already on your `PATH`, add it in your shell profile before using `e` from anywhere.
 
-### Alternative: download only for the current user
+### Alternative: Download Only for the Current User
 
 If you do not want a local clone, download the script directly:
 
@@ -46,7 +46,7 @@ curl -fsSL https://raw.githubusercontent.com/llagerlof/e/main/e -o ~/.local/bin/
 chmod +x ~/.local/bin/e
 ```
 
-### Alternative: install for everyone from a local clone
+### Alternative: Install for Everyone from a Local Clone
 
 To make `e` available system-wide, keep the repository in a normal user's home directory and link it into `/usr/local/bin`:
 
@@ -66,7 +66,7 @@ if [ ! -e /usr/local/bin/e ]; then
 fi
 ```
 
-### Alternative: download for everyone
+### Alternative: Download for Everyone
 
 To install the script directly into `/usr/local/bin`:
 
